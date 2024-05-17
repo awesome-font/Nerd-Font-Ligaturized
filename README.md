@@ -4,7 +4,7 @@ Consola is property of Microsoft so it can't be redistributed here. But it is in
 
 ## How to use
 
-1. Install git, fontforge and python3 eg with `winget install Git.Git FontForge.FontForge Python3`
+1. Install git, fontforge and python3 eg with `winget install Git.Git FontForge.FontForge Python3`. Add FontForge bin folder to PATH.
 2. Clone this repo with `git clone --recurse-submodules --remote-submodules https://github.com/C4illin/Consola-Nerd-Font-Ligaturized.git` (this will take a while)
 3. Locate the four Consola font files on your system and copy them to `Original`
 4. Run `python patch.py`

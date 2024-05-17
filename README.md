@@ -12,7 +12,7 @@ Consola is property of Microsoft so it can't be redistributed here. But it is in
 
 ### Use in VSCode
 
-1. Set `"editor.fontFamily": "'LigaConsola Nerd Font', other fonts..."`
+1. Set `"editor.fontFamily": "'LigaConsola Nerd Font', ...`
 2. Set `"editor.fontLigatures": true,`
 3. You may also set `"debug.console.fontFamily":` and `"terminal.integrated.fontFamily":`
 

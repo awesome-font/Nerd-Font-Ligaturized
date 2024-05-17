@@ -1,0 +1,3 @@
+[submodule "Ligaturizer"]
+	path = Ligaturizer
+	url = https://github.com/ToxicFrog/Ligaturizer.git

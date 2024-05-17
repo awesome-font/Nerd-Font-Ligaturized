@@ -1,6 +1,6 @@
 # Consola-Nerd-Font-Ligaturized
 
-Consola is property of Microsoft so it cant be redistributed here. But it is included in all versions of Windows. Here is a script to patch it. This can probably be used with other fonts too.
+Consola is property of Microsoft so it can't be redistributed here. But it is included in all versions of Windows. Here is a script to patch it. This can probably be used with other fonts too.
 
 ## How to use
 

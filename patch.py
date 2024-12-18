@@ -34,11 +34,21 @@ def clean_font_name(filename):
     
     # 字体样式后缀列表
     style_suffixes = [
-        '-Bold', '-Italic', '-Regular',
-        'Bold', 'Italic', 'Regular',
-        '.bold', '.italic', '.regular',
-        '_Bold', '_Italic', '_Regular'
+        # 复合样式 (最长的要最先处理)
+        '-ExtraLightItalic', '-BlackItalic', '-BoldItalic', '-LightItalic', '-MediumItalic', '-RegularItalic', '-ThinItalic',
+        '-ExtraBoldItalic', '-SemiBoldItalic',
+        # 带分隔符的基础样式
+        '-ExtraLight', '-ExtraBold', '-SemiBold', '-Regular', '-Medium', '-Light', '-Black', '-Bold', '-Thin', '-Italic',
+        # 不带分隔符的样式 (注意顺序要和上面保持一致)
+        'ExtraLight', 'ExtraBold', 'SemiBold', 'Regular', 'Medium', 'Light', 'Black', 'Bold', 'Thin', 'Italic',
+        # 点号分隔的样式
+        '.extralight', '.extrabold', '.semibold', '.regular', '.medium', '.light', '.black', '.bold', '.thin', '.italic',
+        # 下划线分隔的样式
+        '_ExtraLight', '_ExtraBold', '_SemiBold', '_Regular', '_Medium', '_Light', '_Black', '_Bold', '_Thin', '_Italic'
     ]
+    
+    # 按长度排序确保最长的后缀先被替换
+    style_suffixes.sort(key=len, reverse=True)
     
     # 移除所有样式后缀
     cleaned_name = base_name
@@ -56,11 +66,11 @@ for file in font_files:
     os.system(
         f'fontforge -lang py -script ligaturize.py "../Original/{file}" --output-dir="../Ligaturized/" --output-name="{output_name}"'
     )
-
+    
 os.chdir("../FontPatcher")
 files = os.listdir('../Ligaturized')
 os.makedirs("../Output", exist_ok=True)
 for file in files:
     os.system(
-        f'fontforge -script font-patcher "../Ligaturized/{file}" --out "../Output/" --complete'
+        f'fontforge -script font-patcher "../Ligaturized/{file}" --out "../Output/" --complete --makegroups 4'
     )

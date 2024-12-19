@@ -136,6 +136,5 @@ def main():
     logger.info("\n=== Font Processing Complete ===")
     logger.info(f"Output files can be found in the 'Output' directory")
 
-
 if __name__ == "__main__":
     main()
